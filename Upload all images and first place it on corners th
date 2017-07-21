@@ -1,0 +1,7 @@
+Upload all images and first place it on corners then come to the middle.
+
+If space left :
+	Extend all images up to a point until no overlap and fill the background with some color.
+
+If photos overlap.
+	REsize images keeping aspect ratios same until no overlap
