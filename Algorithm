@@ -1,0 +1,19 @@
+Algorithm 1:
+Upload all images and first place it on corners then come to the middle.
+
+If space left :
+	Extend all images up to a point until no overlap and fill the background with some color.
+
+If photos overlap.
+	REsize images keeping aspect ratios same until no overlap
+	
+	
+Algorithm 2(Used in colw.py):
+I used 7 default templates to arrange photos in the canvas. More and
+more templates can be added without changing much code. These
+templates will be merged with each other in the final canvas of the image
+making a collage. All the photos can be taken as random input which will
+result in random canvas containing different photos each time it is
+refreshed. This will give user more than one options for the collage.Also
+while loops can be arranged in random order or called randomly by putting 
+those loops in separate functions.

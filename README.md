@@ -10,4 +10,4 @@ The output image collage will be saved as out.jpg
 
 colw.py creates a portrait collage.
 
-col.py creates a landscape collage.
+col.py creates a landscape collage. ( In progress )
