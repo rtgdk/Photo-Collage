@@ -307,15 +307,8 @@ def mod(rw,rh,b):
         return 0
 
 try:
-    #a = Image.open('a.png')
-    #a.show()
-    #print (a.size)
-    #w,h = a.size
-    #box = (0,0,w,h)
     lis = list()
     for i in argv:
-        #rw = random.randrange(w/10,w/2)
-        #rh = random.randrange(h/10,h/2)
         b = Image.open(i)
         rw ,rh= b.size
         print (b.size)
