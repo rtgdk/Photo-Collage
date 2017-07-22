@@ -4,9 +4,9 @@ Work at Yrals. Photo Collage Algorithm
 # How to Run
 `python colw.py <image1 path> <image2 path> ...... `
 
-The output image collage will be saved as out.png
+The output image collage will be saved as out.jpg
 
-#Files
+# Files
 
 colw.py creates a portrait collage.
 
