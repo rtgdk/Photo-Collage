@@ -234,56 +234,6 @@ def fixwidth(i,maxw):
             i[0][0],i[0][1] = w1,h1
             i[1][0],i[1][1] = w2,h2
             return
-"""
-def fixheight(i,maxh): 
-    if (i[len(i)-1]=="1"):
-        if (i[2][1] == maxh):
-            return
-        else :
-            w3 = ((maxh * i[2][0])/(i[2][1]))
-            h3 = maxh
-            h1 = ((maxh * i[0][1])/(i[0][1]+i[1][1]))
-            w1 = ((i[0][0]*h1)/(i[0][1]))
-            h2 = ((maxh * i[1][1])/(i[0][1]+i[1][1]))
-            w2 = ((i[1][0]*h2)/(i[1][1]))
-            i[0][0],i[0][1] = w1,h1
-            i[1][0],i[1][1] = w2,h2
-            i[2][0],i[2][1] = w3,h3
-            return
-    elif (i[len(i)-1]=="7"):
-        if (i[1][1] == maxh):
-            return
-        else :
-            w3 = ((maxh * i[1][0])/(i[1][1]))
-            h3 = maxh
-            h1 = ((maxh * i[0][1])/(i[0][1]+i[2][1]))
-            w1 = ((i[0][0]*h1)/(i[0][1]))
-            h2 = ((maxh * i[2][1])/(i[0][1]+i[2][1]))
-            w2 = ((i[2][0]*h2)/(i[2][1]))
-            i[0][0],i[0][1] = w1,h1
-            i[2][0],i[2][1] = w2,h2
-            i[1][0],i[1][1] = w3,h3
-            return
-    elif ((i[len(i)-1]=="3") or (i[len(i)-1]=="5") or (i[len(i)-1]=="6")):
-        if (i[0][0] == maxh):
-            return
-        else :
-            i[0][0] = ((i[0][0]*maxh)/i[0][1])
-            i[0][1] = maxh
-            return
-    else:
-        if (i[0][1] == maxh):
-            return
-        else :
-            h1 = maxh
-            h2 = maxh
-            w1 = ((i[0][0]*h1)/(i[0][1]))
-            w2 = ((i[1][0]*h2)/(i[1][1]))
-            i[0][0],i[0][1] = w1,h1
-            i[1][0],i[1][1] = w2,h2
-            return
-            
-"""    
 
 # Divide photos into groups using ratio of width and height.        
 def mod(rw,rh,b):
@@ -355,8 +305,6 @@ try:
         #ch = ch + maxh
         totalw = totalw + cw
         maxw = cw if cw> maxw else maxw
-    #print ("here maxw maxh")
-    #print (maxw,maxh)
     for i in final:
         fixwidth(i,maxw)
     for i in final:
@@ -365,8 +313,6 @@ try:
             maxh = i[j][1] if i[j][1] > maxh else maxh
         ch = ch + maxh
         #ch = maxh if maxh>ch else ch
-    #for i in final:
-        #fixheight(i,ch)
     print ("MAXW = " + str(maxw) + " Maxh ="+ str(ch))
     b = Image.new("RGBA",(maxw,ch),"#ff0000")
     maxh = 0
@@ -410,60 +356,6 @@ try:
     print (b.size)
     b.show()
     b.save("out.jpg")
-    #b.show()   
-    # out = a.resize((rw,rh))
-    # print (rw,rh)
-    # maxh = rh if rh > maxh else maxh
-    # if (cw + rw > 1280):
-    #     cw = 0
-    #     ch = maxh
-    # if (ch + rh>720):
-    #     pass
-    #     #break
-    # print ("Placing at " + str(cw) + "," + str(ch))
-    # b.paste(out,(cw,ch))
-    # cw = cw + rw        
-    
-    #out2 = a.resize((w/3,h/3))
-    
-    #b.paste(out2,(0,0))
-    #b.paste(out,(w/3,0))
-    #b.show()
-    #print(b.size)
-    #r,g,b,A = (a.split())
-    #a = Image.merge("RGBA",(b,g,A,r))
-    #out2 = a.filter(ImageFilter.DETAIL)
-    #out = out2.resize((w/2,h/2))
-    #out3 = a.point(lambda i: i * 0.5)
-    #enh = ImageEnhance.Contrast(a)
-    #enh.enhance(1.3).show("30 %")
-    #r = a.crop(box)
-    #r = r.transpose(Image.ROTATE_90)
-    #print (out3.size)
-    #out3.show()
-    #a.paste(r,(0,0,h,w))
-    #print (out.size)
-    #print (out2.size)
-    #out = out.filter(ImageFilter.DETAIL)
-    #out.show()
-    #out2.show()
-    #a.save(outfile)
 except:
     traceback.print_exc()
     print ("Cannot convert")
-"""
-try :
-    im = Image.open("giphy.gif")
-    im.duration()
-    im.show()
-    im.seek(1)
-    while 1:
-        im.seek(im.tell()+1)
-        #im.show()
-        print("here")
-        #sleep(1)
-except EOFError:
-    traceback.print_exc()
-    pass
-"""
-#im.show()
